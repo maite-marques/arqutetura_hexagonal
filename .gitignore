@@ -1,0 +1,9 @@
+# dependency directory
+node_modules
+
+# Trash
+.DS_Store
+
+# Dynamically processed files
+coverage
+dist
