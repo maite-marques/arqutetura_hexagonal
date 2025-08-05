@@ -11,6 +11,10 @@ export default class TerminalUtil {
     terminal.clear();
   }
 
+  static exibirChaveValor(chave: string, valor: any) {
+    terminal.yellow(chave).green(valor).white('\n');
+  }
+
   static async menu(options: string[]): Promise<[number, string]> {
     const resposta = await terminal.singleColumnMenu(options).promise
     return [resposta.selectedIndex, resposta.selectedText]
