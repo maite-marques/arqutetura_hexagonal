@@ -5,11 +5,13 @@ import TerminalUtil from '../util/TerminalUtil';
 import corrida from '@/core/fundamentos/corrida';
 import Ferrari from '@/core/fundamentos/Ferrari';
 import Carro from '@/core/fundamentos/Carro';
+import { terminal } from 'terminal-kit';
+import Civic from '@/core/fundamentos/Civic';
 
 export default async function dip() {
   TerminalUtil.titulo('DIP')
 
-  const [tipo] = await TerminalUtil.selecao('Tipo de carro?', ['Fusca', 'Ferrari'])
+  const [tipo] = await TerminalUtil.selecao('Tipo de carro?', ['Fusca', 'Civic', 'Ferrari'])
 
   let carro;
 
@@ -17,12 +19,15 @@ export default async function dip() {
     case 0: 
       carro = new Fusca() 
       break
+    case 0: 
+      carro = new Civic() 
+      break
     case 1: 
       carro = new Ferrari() 
       break
   }
 
-  corrida(carro as Carro);
+  corrida(carro as Carro, terminal.red);
 
   await TerminalUtil.esperarEnter()
 }
