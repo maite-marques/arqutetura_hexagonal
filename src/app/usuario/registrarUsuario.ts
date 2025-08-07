@@ -5,10 +5,10 @@ import RegistrarUsuario from '@/core/usuario/service/RegistrarUsuario';
 export default async function registrarUsuario(): Promise<void> {
   TerminalUtil.titulo("Registrar Usuario")
 
-  const id = await TerminalUtil.campoRequerido('Id: ')
-  const nome = await TerminalUtil.campoRequerido('Nome: ')
-  const email = await TerminalUtil.campoRequerido('Email: ')
-  const senha = await TerminalUtil.campoRequerido('Senha: ')
+  const id = await TerminalUtil.campoRequerido('Id: ', 'jilsas-asdfasd-asdfasd-asdfa')
+  const nome = await TerminalUtil.campoRequerido('Nome: ', 'Ana da Silva')
+  const email = await TerminalUtil.campoRequerido('Email: ', 'anasilva2gmail.com')
+  const senha = await TerminalUtil.campoRequerido('Senha: ', '1234567')
 
   const usuario: Usuario = { id, nome, email, senha }
 
