@@ -7,12 +7,22 @@ export default class TerminalUtil {
     terminal.magenta(`${text}\n`)
     terminal.magenta(`-`.repeat(text.length) + `\n`)
   }
+
   static limpar() {
     terminal.clear();
   }
 
   static exibirChaveValor(chave: string, valor: any) {
     terminal.yellow(chave).green(valor).white('\n');
+  }
+
+  static async campoRequerido(label: string, valorPadrao: string = ''): Promise<string> {
+    terminal.yellow(`\n${label}`)
+    const valor = await terminal.inputField({
+      default: valorPadrao
+    }).promise
+    if(valor) return valor
+    return TerminalUtil.campoRequerido(label)
   }
 
   static async menu(options: string[]): Promise<[number, string]> {
@@ -37,7 +47,11 @@ export default class TerminalUtil {
     await terminal.inputField({ echo: false }).promise
   }
 
-  static textoRed(text: string) {
-    terminal.red(`${text}`)
+  static async sucesso(texto: string) {
+    terminal.green(texto + '\n')
+  }
+
+  static async erro(texto: string) {
+    terminal.red(texto + '\n')
   }
 }
