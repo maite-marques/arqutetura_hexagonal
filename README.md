@@ -3,7 +3,8 @@
 Projeto baseado no curso [`Arquitetura Limpa e Hexagonal`](https://www.udemy.com/course/arquitetura-limpa-e-hexagonal/?kw=domine+arquitetura+lim&src=sac&couponCode=25BBPMXINACTIVE) da udemy, com o instrutor Leonardo Moura Leitão da cod3r.
 
 # Notas do curso
-## Conceitos
+
+### Conceitos
 
 A `Orientação a Objetos` é a disciplina sobre a transferência indireta de controle, tornando o polimorfismo como um dos pilares mais importantes do ponto de vista arquitetural.
 
@@ -31,3 +32,7 @@ adapters - diversos adaptadores externos que não fazem parte do core bussines d
   - auth - senha cripto
   - banco de dados
   dependências externas
+
+
+### Resumo
+  Quando você aplica o padrão de `inversão de dependências` usando **portas** e **adaptadores** você consegue desvincular todas as regras de negócio da sua aplicação, de qualquer demanda ou acoplamento desnecessário para a infraestrutura da aplicação. Separar o core da aplicação dos detalhes das tecnologias.
