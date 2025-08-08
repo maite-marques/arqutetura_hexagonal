@@ -47,11 +47,11 @@ export default class TerminalUtil {
     await terminal.inputField({ echo: false }).promise
   }
 
-  static async sucesso(texto: string) {
-    terminal.green(texto + '\n')
+  static async sucesso(texto: string, novaLinha: boolean = true) {
+    terminal.green(novaLinha ? `\n${texto}\n` : texto)
   }
 
-  static async erro(texto: string) {
-    terminal.red(texto + '\n')
+  static async erro(texto: string, novaLinha: boolean = true) {
+    terminal.red(novaLinha ? `\n${texto}\n\n` : texto)
   }
 }
