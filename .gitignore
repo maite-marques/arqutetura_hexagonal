@@ -7,5 +7,6 @@ node_modules
 # Dynamically processed files
 coverage
 dist
+.env
 
 nota.txt
