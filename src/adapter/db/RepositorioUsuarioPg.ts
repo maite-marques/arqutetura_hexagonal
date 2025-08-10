@@ -23,4 +23,10 @@ export default class RepositorioUsuarioPg {
     if (!usuario) return null
     return { ...usuario, nome: usuario.name }
   }
+
+  async removerUsuario(usuario: Usuario): Promise<boolean> {
+    // implement remove user
+    return Promise.resolve(true);
+  }
 }
+
