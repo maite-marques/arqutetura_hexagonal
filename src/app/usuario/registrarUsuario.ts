@@ -1,8 +1,8 @@
-import Usuario from '@/core/usuario/model/Usuario';
-import TerminalUtil from '../util/TerminalUtil';
 import RegistrarUsuario from '@/core/usuario/service/RegistrarUsuario';
-import SenhaCripto from '@/adapter/auth/SenhaCritpo';
 import RepositorioUsuarioPg from '@/adapter/db/RepositorioUsuarioPg';
+import SenhaCripto from '@/adapter/auth/SenhaCritpo';
+import TerminalUtil from '../util/TerminalUtil';
+import Usuario from '@/core/usuario/model/Usuario';
 
 export default async function registrarUsuario(): Promise<void> {
   const { campoRequerido, titulo, sucesso, erro, esperarEnter } = TerminalUtil
